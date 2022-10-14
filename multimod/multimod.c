@@ -40,8 +40,8 @@ uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 }
 
 uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
-  unsigned char[64] a_bit;
-	unsigned char[64] b_bit;
+  unsigned char a_bit[64];
+	unsigned char b_bit[64];
 	uint64_t c=mod(a,m);
 	uint64_t d=mod(b,m);
   for(int i=0;i<64;i++)
