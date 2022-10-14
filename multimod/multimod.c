@@ -46,7 +46,6 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
   for(int i=0;i<64;i++)
 	{
     a_bit[i]=(c>>i)&1;
-		b_bit[i]=(d>>i)&1;
 	}
 	uint64_t base=0;
   for(int i=0;i<64;i++)
