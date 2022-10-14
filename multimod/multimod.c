@@ -35,16 +35,16 @@ uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 		return x+y;
 	}
 	else{
-		return mod(x+y,m);
+		return mod(a+b,m);
 	}
 }
 
 uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
-  bool[64] a_bit;
-	bool[64] b_bit;
+  unsigned char[64] a_bit;
+	unsigned char[64] b_bit;
 	uint64_t c=mod(a,m);
 	uint64_t d=mod(b,m);
-  while(int i=0;i<64;i++)
+  for(int i=0;i<64;i++)
 	{
     a_bit[i]=(c>>i)&1;
 		b_bit[i]=(d>>i)&1;
@@ -52,7 +52,7 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 	uint64_t base=0;
   for(int i=0;i<64;i++)
 	{
-		if(a_bit[i])
+		if(a_bit[i]==1)
 		{
 			uint64_t times=power_of_2(i);
 			for(int i=0;i<times;i++)
