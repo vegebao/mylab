@@ -2,7 +2,7 @@
 
 uint64_t mod(uint64_t a, uint64_t b)
 {
-  while(a>b)
+  while(a>=b)
 	{
 		a=a-b;
 	}
@@ -18,7 +18,7 @@ uint64_t power_of_2(uint64_t a)
 	{
 		for(int i=0;i<a;i++)
 		{
-			it=it*2;
+		  it=it+it;
 		}
 		return it;
 	}
@@ -26,7 +26,7 @@ uint64_t power_of_2(uint64_t a)
 
 uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 {
-  uint64_t rest=power_of_2(32)-a;
+    uint64_t rest=power_of_2(32)-a;
 	if(rest>=b)
 	{
 		uint64_t c=a+b;
@@ -40,15 +40,15 @@ uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 }
 
 uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
-  unsigned char a_bit[64];	
+    unsigned char a_bit[64];	
 	uint64_t c=mod(a,m);
 	uint64_t d=mod(b,m);
-  for(int i=0;i<64;i++)
+    for(int i=0;i<64;i++)
 	{
     a_bit[i]=(c>>i)&1;
 	}
 	uint64_t base=0;
-  for(int i=0;i<64;i++)
+    for(int i=0;i<64;i++)
 	{
 		if(a_bit[i]==1)
 		{
