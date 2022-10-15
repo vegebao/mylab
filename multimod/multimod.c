@@ -2,10 +2,10 @@
 
 uint64_t mod(uint64_t a, uint64_t b)
 {
-  while(a>=b)
+    while(a>=b)
 	{
 		uint64_t ta=b;
-		while(ta<<1 <= a)
+		while(ta <= a-ta)
 		{
 			ta=ta<<1;
 		}
