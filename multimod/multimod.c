@@ -16,18 +16,16 @@ uint64_t power_of_2(uint64_t a)
 		return it;
 	else
 	{
-		for(int i=0;i<a;i++)
-		{
-		  it=it+it;
-		}
+		uint64_t k=it<<a;
+		it = k;
 		return it;
 	}
 }
 
 uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 {
-    uint64_t rest=power_of_2(32)-a;
-	if(rest>=b)
+    uint64_t rest=power_of_2(32)-a-1;
+	if(rest<b)
 	{
 		uint64_t c=a+b;
 		uint64_t x=mod(c,m);
