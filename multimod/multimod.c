@@ -68,7 +68,7 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 		uint64_t times=mod(power_of_2(63), m);
 		for(int i=0;i<times;i++)
 		{
-			base=mod_add(base,d,m)
+			base=mod_add(base,d,m);
 		}
 	}
 
