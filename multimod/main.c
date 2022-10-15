@@ -48,5 +48,5 @@ int main() {
   test(4697541238,36);
   test(4954871392,4265487912);
   test(-1ULL,-2ULL);
-  test(power_of_2(64),67);
+  test(0,67);
 }
