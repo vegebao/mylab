@@ -40,5 +40,5 @@ void test(uint64_t a,uint64_t m) {
   printf(U64 " mod " U64 " = " U64 "\n", a,  m, mod(a,  m));
 }
 int main() {
-  test(power_of_2(63), -1ULL); // 
+  test(-1ULL, -1ULL); // 
 }
