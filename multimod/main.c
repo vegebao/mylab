@@ -11,6 +11,7 @@ void test(uint64_t a, uint64_t m) {
 
 int main() {
   test(783, 456);
-  test(-1ULL , 325);
+  printf(-1ULL);
+  printf(-2ULL);
   test(-1ULL ,-2ULL); 
 }
