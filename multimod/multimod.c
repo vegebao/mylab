@@ -55,7 +55,7 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 		uint64_t d=mod(b,m);
 		if(a_bit[i]==1)
 		{
-			for(int i=0;i<i;i++)
+			for(int k=0;k<i;k++)
 			{
 				d=mod_add(d,d,m);
 			}
