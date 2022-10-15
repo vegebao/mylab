@@ -12,5 +12,5 @@ void test(uint64_t a,uint64_t m) {
 
 int main() {
 
-  printf(mod(-2ULL,-3ULL));
+  test(-2ULL,-3ULL);
 }
