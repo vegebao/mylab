@@ -51,7 +51,7 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
     a_bit[i]=(c>>i)&1;
 	}
 	uint64_t base=0;
-    for(int i=0;i<64;i++)
+    /*for(int i=0;i<64;i++)
 	{
 		if(a_bit[i]==1)
 		{
@@ -62,6 +62,14 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 			}
 		}
 
+	}*/
+	if(a_bit[63]==n)
+	{
+		uint64_t times=mod(power_of_2(63), m);
+		for(int i=0;i<times;i++)
+		{
+			base=mod_add(base,d,m)
+		}
 	}
 
 	return base; //(a*b)%m;

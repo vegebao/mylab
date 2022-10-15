@@ -26,12 +26,7 @@ void test(uint64_t a, uint64_t b, uint64_t m) {
   printf(U64 " * " U64 " mod " U64 " = " U64 "\n", a, b, m, multimod(a, b, m));
 }
 int main() {
-  test(15498,15498, 36);//<2^32;<2^32    shoubld be 0
-  test(4294156248, 149875642,61);//<2^32;<2^32   should be 49
-  test(4294217854, 2187945658,4216548765);//<2^32  <2^32  should be 2265614747
-  test(4697541238, 49875462135,36);
-  test(4954871392,4743219764, 4265487912);
-  test(-2ULL,-2ULL,-1ULL);
+  test(-2ULL,power_of_2(63),-1ULL);
 }
 
 
