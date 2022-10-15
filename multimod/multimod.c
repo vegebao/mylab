@@ -52,15 +52,15 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 	uint64_t base=0;
     for(int i=0;i<64;i++)
 	{
-		uint64_t d=mod(b,m);
 		if(a_bit[i]==1)
 		{
+			uint64_t x=b;
 			for(int k=0;k<i;k++)
 			{
-				d=mod_add(d,d,m);
+				x=mod_add(x,x,m);
 			}
 		}
-		base=mod_add(base,d,m);
+		base=mod_add(base,x,m);
 
 	}
 	/*if(a_bit[63]==1)
