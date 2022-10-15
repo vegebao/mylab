@@ -35,10 +35,10 @@ uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 		uint64_t c=a+b;
 		uint64_t x=mod(c,m);
 		uint64_t y=mod(power_of_2(32),m);
-		return x+y;
+		return c;
 	}
 	else{
-		return mod(a+b,m);
+		return a+b;
 	}
 }
 
