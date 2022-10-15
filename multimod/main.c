@@ -10,6 +10,13 @@ void test(uint64_t a,uint64_t b ,uint64_t m) {
 }
 
 int main() {
+  FILE *fp = popen("python3 -c 'print(10**100 - 1)'", "r");
+  assert(fp);
+  fscanf(fp, "%s", buf);
+  printf("popen() returns: %s\n", buf);
+  pclose(fp);
+  
+  
   test(15498,15498, 36);//<2^32;<2^32
   test(4294156248, 149875642,61);//<2^32;<2^32
   test(4294217854, 2187945658,4216548765);//<2^32  <2^32
