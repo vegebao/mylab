@@ -34,9 +34,8 @@ uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 	{
 		uint64_t c=b-1-rest;
 		uint64_t x=mod(c,m);
-		uint64_t y=mod(power_of_2(63),m);
-		uint64_t z=mod_add(y+1,y-1,m);
-		return z;
+		uint64_t y=mod(-1ULL,m);
+		return mod_add(x+1,y,m);
 	}
 	else{
 		return mod(a+b, m);
