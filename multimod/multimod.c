@@ -59,8 +59,8 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 			{
 				x=mod_add(x,x,m);
 			}
+			base=mod_add(base,x,m);
 		}
-		base=mod_add(base,x,m);
 
 	}
 	/*if(a_bit[63]==1)
