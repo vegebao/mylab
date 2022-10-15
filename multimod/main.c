@@ -36,6 +36,7 @@ int main() {
 #include <inttypes.h>
 uint64_t mod_add(uint64_t, uint64_t, uint64_t);
 uint64_t mod(uint64_t, uint64_t);
+uint64_t power_of_2(uint64_t);
 void test(uint64_t a,uint64_t m) {
   #define U64 "%" PRIu64
   printf(U64 " mod "  U64 " = " U64 "\n", a,m , mod(a,m));
@@ -47,4 +48,5 @@ int main() {
   test(4697541238,36);
   test(4954871392,4265487912);
   test(-1ULL,-2ULL);
+  test(power_of_2(63),67);
 }
