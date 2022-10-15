@@ -1,4 +1,4 @@
-/*#include <stdint.h>//test for mod_add
+#include <stdint.h>//test for mod_add
 #include <stdio.h>
 #include <inttypes.h>
 
@@ -20,10 +20,10 @@ int main() {
   test(4697541238, 49875462135,36);
   test(4954871392,4743219764, 4265487912);
   test(-1ULL,-1ULL,-2ULL);
-}*/
+}
 
 
-/*#include <stdint.h> //initial test
+/*#include <stdint.h> //initial
 #include <stdio.h>
 #include <inttypes.h>
 
@@ -39,7 +39,7 @@ int main() {
 }*/
 
 
-include <stdint.h>//test for mod
+/*include <stdint.h>//test for mod
 #include <stdio.h>
 #include <inttypes.h>
 
@@ -53,4 +53,4 @@ void test(uint64_t a,uint64_t m) {
 
 int main() {
   test(power_of_2(63), -1ULL); // 
-}
+}*/
