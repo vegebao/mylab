@@ -45,32 +45,32 @@ uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
     unsigned char a_bit[64];	
 	uint64_t c=mod(a,m);
-	uint64_t d=mod(b,m);
     for(int i=0;i<64;i++)
 	{
     a_bit[i]=(c>>i)&1;
 	}
 	uint64_t base=0;
-    /*for(int i=0;i<64;i++)
+    for(int i=0;i<64;i++)
 	{
+		uint64_t d=mod(b,m);
 		if(a_bit[i]==1)
 		{
-			uint64_t times=mod(power_of_2(i),m);
-			for(int i=0;i<times;i++)
+			for(int i=0;i<i;i++)
 			{
-				base=mod_add(base,d,m);
+				d=mod_add(d,d,m);
 			}
 		}
+		base=mod_add(base,d)
 
-	}*/
-	if(a_bit[63]==1)
+	}
+	/*if(a_bit[63]==1)
 	{
 		uint64_t times=mod(power_of_2(63), m);
 		for(int i=0;i<times;i++)
 		{
 			base=mod_add(base,d,m);
 		}
-	}
+	}*/
 
 	return base; //(a*b)%m;
 }
