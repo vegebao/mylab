@@ -4,7 +4,12 @@ uint64_t mod(uint64_t a, uint64_t b)
 {
   while(a>=b)
 	{
-		a=a-b;
+		uint64_t ta=b;
+		while(ta<<1 <= a)
+		{
+			ta=ta<<1;
+		}
+		a=a-ta;
 	}
 	return a;
 }
