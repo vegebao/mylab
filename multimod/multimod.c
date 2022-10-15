@@ -52,10 +52,10 @@ uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
 	{
 		if(a_bit[i]==1)
 		{
-			uint64_t times=power_of_2(i);
+			uint64_t times=mod(power_of_2(i),m);
 			for(int i=0;i<times;i++)
 			{
-				base=mod_add(base,b,m);
+				base=mod_add(base,d,m);
 			}
 		}
 
