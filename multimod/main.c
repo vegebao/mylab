@@ -1,4 +1,4 @@
-/*#include <stdint.h>
+/*#include <stdint.h>//test for mod_add
 #include <stdio.h>
 #include <inttypes.h>
 
@@ -23,7 +23,7 @@ int main() {
 }*/
 
 
-#include <stdint.h>
+/*#include <stdint.h> //initial test
 #include <stdio.h>
 #include <inttypes.h>
 
@@ -35,7 +35,22 @@ void test(uint64_t a, uint64_t b, uint64_t m) {
 }
 
 int main() {
-  test(123, 456, 789);
-  test(123, 456, -1ULL);
   test(-2ULL, -2ULL, -1ULL); // should be 1
+}*/
+
+
+include <stdint.h>//test for mod
+#include <stdio.h>
+#include <inttypes.h>
+
+uint64_t mod(uint64_t, uint64_t);
+uint64_t power_of_2(uint64_t);
+
+void test(uint64_t a,uint64_t m) {
+  #define U64 "%" PRIu64
+  printf(U64 " mod " U64 " = " U64 "\n", a,  m, mod(a,  m));
+}
+
+int main() {
+  test(power_of_2(63), -1ULL); // 
 }
