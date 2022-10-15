@@ -29,16 +29,16 @@ uint64_t power_of_2(uint64_t a)
 
 uint64_t mod_add(uint64_t a, uint64_t b, uint64_t m)
 {
-    uint64_t rest=power_of_2(32)-a-1;
+    uint64_t rest=power_of_2(64)-a-1;
 	if(rest<b)
 	{
-		uint64_t c=a+b;
+		uint64_t c=b-1-rest;
 		uint64_t x=mod(c,m);
-		uint64_t y=mod(power_of_2(32),m);
-		return c;
+		uint64_t y=mod(power_of_2(64),m);
+		return mod_add(x,y,m);
 	}
 	else{
-		return a+b;
+		return mod(a+b, m);
 	}
 }
 
