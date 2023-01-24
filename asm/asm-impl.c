@@ -2,11 +2,11 @@
 #include <string.h>
 
 int64_t asm_add(int64_t a, int64_t b) {
-  /*asm(
-    "addl %1, %0"
+  asm(
+    "add %1, %0"
     :"=r"(a)
     :"r"(a),"r"(b)
-  );*/
+  );
   a=a+b;
   return a;
 }
