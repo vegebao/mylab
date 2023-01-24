@@ -3,7 +3,7 @@
 
 int64_t asm_add(int64_t a, int64_t b) {
   asm(
-    "lea (%1,%0,$1), %0"
+    "lea (%1,%0,1), %0"
     :"=r"(a)
     :"r"(a),"r"(b)
   );
