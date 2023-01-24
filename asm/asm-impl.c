@@ -2,12 +2,13 @@
 #include <string.h>
 
 int64_t asm_add(int64_t a, int64_t b) {
+  int64_t c;
   asm(
-    "lea (%1,%0,1), %0"
-    :"=r"(a)
+    "lea (%1,%2,1), %0"
+    :"=r"(c)
     :"r"(a),"r"(b)
   );
-  return a;
+  return c;
 }
 
 int asm_popcnt(uint64_t x) {
