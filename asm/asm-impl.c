@@ -17,12 +17,12 @@ int asm_popcnt(uint64_t x) {
   int s=0,i=0;
   asm(
     "L1:\n\t"
-    "mov %rdx, %rdi\n\t"
-    "shr %ecx, %rdi\n\t"
-    "and $1, %rdi\n\t"
-    "add %edi, %eax\n\t"
-    "add $1, %ecx\n\t"
-    "cmp $32, %ecx\n\t"
+    "mov %%rdx, %%rdi\n\t"
+    "shr %%ecx, %%rdi\n\t"
+    "and $1, %%rdi\n\t"
+    "add %%edi, %%eax\n\t"
+    "add $1, %%ecx\n\t"
+    "cmp $32, %%ecx\n\t"
     "jne L1\n\t"
     :"=a"(s)
     :"c"(i),"d"(x)
