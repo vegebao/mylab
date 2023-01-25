@@ -22,7 +22,7 @@ int asm_popcnt(uint64_t x) {
     "and $1, %%rdi\n\t"
     "add %%edi, %%eax\n\t"
     "add $1, %%ecx\n\t"
-    "cmp $32, %%ecx\n\t"
+    "cmp $64, %%ecx\n\t"
     "jne L1\n\t"
     :"=a"(s)
     :"c"(i),"d"(x)
