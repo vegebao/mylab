@@ -26,7 +26,7 @@ int asm_popcnt(uint64_t x) {
     "jne L1\n\t"
     :"=a"(s)
     :"c"(i),"d"(x)
-    :"ecx","eax","rdi"
+    :"rdi"
   );
   return s;
 }
