@@ -14,7 +14,8 @@ int asm_popcnt(uint64_t x) {
   /*for (int i = 0; i < 64; i++) {
     if ((x >> i) & 1) s++;
   }*/
-  int s=0,i=0;
+  int s=0;
+  int i=0;
   asm(
     "L1:\n\t"
     "mov %%rdx, %%rdi\n\t"
@@ -25,7 +26,7 @@ int asm_popcnt(uint64_t x) {
     "cmp $64, %%ecx\n\t"
     "jne L1\n\t"
     :"=a"(s)
-    :"c"(i),"d"(x)
+    :"a"(s),"c"(i),"d"(x)
     :"rdi"
   );
   return s;
