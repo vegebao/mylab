@@ -35,6 +35,8 @@ int asm_popcnt(uint64_t x) {
 void *asm_memcpy(void *dest, const void *src, size_t n) {
   int i=0;
   asm(
+    "cmp %%rax, %%rdx\n\t"
+    "ja L4:"
     "L2:\n\t"
     "movb (%%rcx,%%rdi,1), %%dl\n\t"
     "cmp %%rbx, %%rcx\n\t"
@@ -49,6 +51,13 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
     "add $1, %%rcx\n\t"
     "cmp %%rcx, %%rbx\n\t"
     "jne L3\n\t"
+    "jmp R\n\t"
+    "L4:\n\t"
+    "cmp $0, %%rbx\n\t"
+    "je R\n\t"
+    "movb $-1(%%rbx,%%rdi,$1), %%dl\n\t"
+    "movb %%dl, $-1(%%rbx,%%rax,$1)\n\t"
+    "sub $1, %%rbx\n\t"
     "R:\n\t"
     :"=a"(dest)
     :"a"(dest),"c"(i),"b"(n),"D"(src)
