@@ -56,7 +56,7 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
     "cmp $0, %%rbx\n\t"
     "je R\n\t"
     "movb -1(%%rbx,%%rdi,$1), %%dl\n\t"
-    "movb %%dl, $-1(%%rbx,%%rax,$1)\n\t"
+    "movb %%dl, -1(%%rbx,%%rax,$1)\n\t"
     "sub $1, %%rbx\n\t"
     "R:\n\t"
     :"=a"(dest)
