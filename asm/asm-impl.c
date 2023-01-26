@@ -36,13 +36,13 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
   int i=0;
   asm(
     "cmp %%rax, %%rdx\n\t"
-    "ja L4:\n\t"
+    "ja L4\n\t"
     "L2:\n\t"
     "movb (%%rcx,%%rdi,1), %%dl\n\t"
     "cmp %%rbx, %%rcx\n\t"
     "je R\n\t"
     "cmp $0, %%dl\n\t"
-    "je L3:\n\t"
+    "je L3\n\t"
     "movb %%dl, (%%rcx,%%rax,1)\n\t"
     "add $1, %%rcx\n\t"
     "jmp L2\n\t"
