@@ -91,5 +91,4 @@ void asm_longjmp(asm_jmp_buf env, int val) {
     :"=a"(val)
     :"a"(val),"d"(t)
   );
-  return val;
 }
