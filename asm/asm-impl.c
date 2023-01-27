@@ -61,7 +61,6 @@ asm(
 
 int asm_setjmp(asm_jmp_buf env) {
   int s=0;
-  asm_jmp_buf *t=&env;
   asm(
     "movq %%rbx, (%%rdx)\n\t"
     "movq %%rcx, 8(%%rdx)\n\t"
@@ -76,14 +75,13 @@ int asm_setjmp(asm_jmp_buf env) {
     "movq %%rsi, 40(%%rdx)\n\t"
     "movq %%rdi, 48(%%rdx)\n\t"
     :"=a"(s)
-    :"a"(s),"d"(t)
+    :"a"(s),"d"(env)
     :"rbx","rcx"
   );
   return s;
 }
 
 void asm_longjmp(asm_jmp_buf env, int val) {
-  asm_jmp_buf *t=&env;
   asm(
     "movq (%%rdx), %%rbx\n\t"
     "movq 8(%%rdx), %%rcx\n\t"
@@ -96,7 +94,7 @@ void asm_longjmp(asm_jmp_buf env, int val) {
     "movq 48(%%rdx), %%rdi\n\t"
     "ret\n\t"
     :"=a"(val)
-    :"a"(val),"d"(t)
+    :"a"(val),"d"(env)
     :"rcx","rbx","rdi","rsi"
   );
 }

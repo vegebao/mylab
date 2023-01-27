@@ -1,9 +1,11 @@
 #include <stdint.h>
 #include <stddef.h>
 
+
+
 // TODO: replace with your definition
 #include <setjmp.h> // remove this
-typedef struct JMP_BUF{
+/*typedef struct JMP_BUF{
   uint64_t rbx;
   uint64_t rcx;
   uint64_t rdx;
@@ -12,9 +14,13 @@ typedef struct JMP_BUF{
   uint64_t rsi;
   uint64_t rdi;
   uint64_t rip;
-}my_jmp_buf;
+}my_jmp_buf;*/
+
+typedef uint64_t my_jmp_buf[8];
 
 #define asm_jmp_buf my_jmp_buf
+
+
 
 int64_t asm_add(int64_t a, int64_t b);
 int     asm_popcnt(uint64_t x);
