@@ -12,7 +12,7 @@ typedef struct JMP_BUF{
   uint64_t rsi;
   uint64_t rdi;
   uint64_t rip;
-} my_jmp_buf;
+}my_jmp_buf;
 
 #define asm_jmp_buf my_jmp_buf
 
