@@ -78,7 +78,6 @@ int asm_setjmp(asm_jmp_buf env) {
 }
 
 void asm_longjmp(asm_jmp_buf env, int val) {
-  int a=val;
   asm_jmp_buf *t=&env;
   asm(
     "mov (%%rdx), %%rbx\n\t"
@@ -89,8 +88,8 @@ void asm_longjmp(asm_jmp_buf env, int val) {
     "mov 40(%%rdx), %%rsi\n\t"
     "mov 48(%%rdx), %%rdi\n\t"
     "mov 56(%%rdx), %%rip\n\t"
-    :"=a"(a)
-    :"a"(a),"d"(t)
+    :"=a"(val)
+    :"a"(val),"d"(t)
   );
-  return a;
+  return val;
 }
