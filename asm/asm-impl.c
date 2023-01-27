@@ -66,13 +66,11 @@ int asm_setjmp(asm_jmp_buf env) {
     "movq %%rbx, (%%rdx)\n\t"
     "movq %%rcx, 8(%%rdx)\n\t"
     "movq %%rdx, 16(%%rdx)\n\t"
-
     "movq %%rbp, %%rbx\n\t"
     "movq (%%rbp), 32(%%rdx)\n\t"
     "add $16, %%rdx\n\t"
     "movq %%rdx, 24(%%rdx)\n\t"
     "movq 8(%%rbp), 56(%%rdx)\n\t"
-    
     "movq %%rsi, 40(%%rdx)\n\t"
     "movq %%rdi, 48(%%rdx)\n\t"
     :"=a"(s)
@@ -87,13 +85,10 @@ void asm_longjmp(asm_jmp_buf env, int val) {
     "movq (%%rdx), %%rbx\n\t"
     "movq 8(%%rdx), %%rcx\n\t"
     "movq 16(%%rdx), %%rdx\n\t"
-    
     "movq 24(%%rdx), %%rsp\n\t"
     "movq 32(%%rdx), %%rbp\n\t"
-    
     "movq 40(%%rdx), %%rsi\n\t"
     "movq 48(%%rdx), %%rdi\n\t"
-    
     "ret\n\t"
     :"=a"(val)
     :"a"(val),"d"(t)
