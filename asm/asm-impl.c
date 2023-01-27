@@ -63,14 +63,14 @@ int asm_setjmp(asm_jmp_buf env) {
   int s=0;
   asm_jmp_buf *t=&env;
   asm(
-    "movq %%rbx, (%%rdx)\n\t"
-    "movq %%rcx, 8(%%rdx)\n\t"
-    "movq %%rdx, 16(%%rdx)\n\t"
-    "movq %%rsp, 24(%%rdx)\n\t"
-    "movq %%rbp, 32(%%rdx)\n\t"
-    "movq %%rsi, 40(%%rdx)\n\t"
-    "movq %%rdi, 48(%%rdx)\n\t"
-    "movq %%rip, 56(%%rdx)\n\t"
+    "movl %%rbx, (%%rdx)\n\t"
+    "movl %%rcx, 8(%%rdx)\n\t"
+    "movl %%rdx, 16(%%rdx)\n\t"
+    "movl %%rsp, 24(%%rdx)\n\t"
+    "movl %%rbp, 32(%%rdx)\n\t"
+    "movl %%rsi, 40(%%rdx)\n\t"
+    "movl %%rdi, 48(%%rdx)\n\t"
+    "movl %%rip, 56(%%rdx)\n\t"
     :"=a"(s)
     :"a"(s),"d"(t)
   );
@@ -80,14 +80,14 @@ int asm_setjmp(asm_jmp_buf env) {
 void asm_longjmp(asm_jmp_buf env, int val) {
   asm_jmp_buf *t=&env;
   asm(
-    "movq (%%rdx), %%rbx\n\t"
-    "movq 8(%%rdx), %%rcx\n\t"
-    "movq 16(%%rdx), %%rdx\n\t"
-    "movq 24(%%rdx), %%rsp\n\t"
-    "movq 32(%%rdx), %%rbp\n\t"
-    "movq 40(%%rdx), %%rsi\n\t"
-    "movq 48(%%rdx), %%rdi\n\t"
-    "movq 56(%%rdx), %%rip\n\t"
+    "movl (%%rdx), %%rbx\n\t"
+    "movl 8(%%rdx), %%rcx\n\t"
+    "movl 16(%%rdx), %%rdx\n\t"
+    "movl 24(%%rdx), %%rsp\n\t"
+    "movl 32(%%rdx), %%rbp\n\t"
+    "movl 40(%%rdx), %%rsi\n\t"
+    "movl 48(%%rdx), %%rdi\n\t"
+    "movl 56(%%rdx), %%rip\n\t"
     :"=a"(val)
     :"a"(val),"d"(t)
   );
