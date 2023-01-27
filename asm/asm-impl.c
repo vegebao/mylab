@@ -77,6 +77,7 @@ int asm_setjmp(asm_jmp_buf env) {
     "movq %%rdi, 48(%%rdx)\n\t"
     :"=a"(s)
     :"a"(s),"d"(t)
+    :"rbx","rcx"
   );
   return s;
 }
@@ -96,5 +97,6 @@ void asm_longjmp(asm_jmp_buf env, int val) {
     "ret\n\t"
     :"=a"(val)
     :"a"(val),"d"(t)
+    :"rcx","rbx","rsp","rbp","rdi","rsi"
   );
 }
