@@ -97,6 +97,6 @@ void asm_longjmp(asm_jmp_buf env, int val) {
     "ret\n\t"
     :"=a"(val)
     :"a"(val),"d"(t)
-    :"rcx","rbx","rsp","rbp","rdi","rsi"
+    :"rcx","rbx","rdi","rsi"
   );
 }
