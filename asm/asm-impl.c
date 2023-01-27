@@ -63,7 +63,9 @@ int asm_setjmp(asm_jmp_buf env) {
   int s=0;
   asm_jmp_buf *t=&env;
   asm(
-    "movq %%rbx, (%%rdx)\n\t"
+    "movl %%ebx, (%%rdx)\n\t"
+    "shr $32, %%rbx\n\t"
+    "movl %%ebx, 4(%%rdx)\n\t"
     "movq %%rcx, 8(%%rdx)\n\t"
     "movq %%rdx, 16(%%rdx)\n\t"
     "movq %%rsp, 24(%%rdx)\n\t"
