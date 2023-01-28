@@ -1,9 +1,5 @@
 #include <stdint.h>
 #include <stddef.h>
-
-
-
-// TODO: replace with your definition
 /*typedef struct JMP_BUF{
   uint64_t rbx;
   uint64_t rcx;
