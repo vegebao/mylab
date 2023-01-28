@@ -58,7 +58,7 @@ asm(
 
 int asm_setjmp(asm_jmp_buf env) {
   int s=0;
-  asm(
+  asm volatile(
     "movq %%rbx, (%%rdx)\n\t"
     "movq %%rcx, 8(%%rdx)\n\t"
     "movq %%rdx, 16(%%rdx)\n\t"
@@ -79,7 +79,7 @@ int asm_setjmp(asm_jmp_buf env) {
 }
 
 void asm_longjmp(asm_jmp_buf env, int val) {
-  asm(
+  asm volatile(
     "movq (%%rdx), %%rbx\n\t"
     "movq 8(%%rdx), %%rcx\n\t"
     "movq 16(%%rdx), %%rdx\n\t"
