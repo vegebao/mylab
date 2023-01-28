@@ -1,7 +1,6 @@
 #include "asm.h"
 #include <assert.h>
 #include <stdio.h>
-
 int main() {
   int a=0,b=1,c=2;
   asm_jmp_buf buf;
@@ -15,4 +14,5 @@ int main() {
     assert(r == 123);
     printf("PASSED.\n");
   }
+  return 0;
 }
